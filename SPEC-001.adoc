@@ -1,0 +1,41 @@
+=== MVP Architecture (No-Code/Low-Code & Free)
+
+This architecture is optimized for a solo founder with minimal coding, using no-code/low-code platforms, free APIs, and Google services.
+
+[plantuml]
+----
+@startuml
+actor You as Founder
+
+rectangle "User Interface (App)" {
+Founder --> Glide App : Drag & Drop Editor
+}
+
+rectangle "Data Source" {
+Glide App --> Google Sheets : Read/Write Data
+Glide App --> Google Drive : Media Uploads
+}
+
+rectangle "Logic & AI" {
+Glide App --> Google Apps Script : Custom Logic
+Glide App --> Webhooks to Google Colab : AI Features, Trip Planner
+}
+
+rectangle "APIs & Integrations" {
+Google Colab --> Booking.com API
+Google Colab --> OpenStreetMap API
+Google Colab --> REST APIs (Currency, Wiki, YouTube)
+}
+@enduml
+----
+
+=== Recommended No/Low-Code Stack
+
+| Component | Tool | Cost | Purpose
+|------------------|----------------|-------------|--------
+| Frontend App | Glide (https://www.glideapps.com) | Free tier available | Build the mobile app visually
+| Database | Google Sheets | Free | Store all app data
+| Logic Layer | Google Apps Script | Free | Add backend logic like filters, subscriptions
+| APIs / ML Layer | Google Colab Notebooks | Free | Run trip planner, AI chat, recommendations
+| Storage | Google Drive | Free up to 15GB | Store media/photos
+| Content/API Data | Open APIs: Wikipedia, YouTube, Booking.com, ExchangeRate-API | Free/Free tier | Enrich app with content and services
